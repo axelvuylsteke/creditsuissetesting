@@ -27,7 +27,6 @@ import static java.lang.System.currentTimeMillis;
 import static org.assertj.core.util.Preconditions.checkArgument;
 
 public class ValidateDataUtils {
-    private Response[] list;
 
     public static String getValidateData(String jsonFile, Map<String, String> fieldValuesOverridesMap, ObjectMapper objectMapper) throws IOException {
 
@@ -113,32 +112,20 @@ public class ValidateDataUtils {
 
     private static Response[] checkMultipleResponses(HttpResponse response) throws IOException {
         String resp = EntityUtils.toString(response.getEntity());
+        System.out.println(resp);
         Gson gson = new Gson();
-        return(gson.fromJson(resp, Response[].class));
+        return gson.fromJson(resp, Response[].class);
     }
 
-    public static int checkNumberOfResponses(String responseType, HttpResponse response) throws IOException {
+    public static int checkNumberOfResponses(HttpResponse response) throws IOException {
         int i = 0;
         for (Response resp : checkMultipleResponses(response)) {
-            switch (responseType) {
-                case "success":
-                    if (resp.getStatus() == "SUCCESS") {
-                        i++;
-                    }
-                    break;
-                case "badRequest":
-                    System.out.println("Test");
-                    break;
-                case "errorMessage":
-                    if (resp.getStatus() == "ERROR") {
-                        i++;
-                    }
-                    break;
+            if (resp.getStatus().equals("SUCCESS")) {
+                i++;
             }
         }
         return i;
     }
-
 
     class Response {
         private String status;

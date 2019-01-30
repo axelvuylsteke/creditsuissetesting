@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.List;
 
 import static ch.creditsuisse.testing.utils.ValidateDataUtils.*;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class ValidateBatch {
     private String validationJsonBody;
@@ -34,13 +35,14 @@ public class ValidateBatch {
     public void performValidateBatch() throws IOException{
         validateResponse = ValidateDataUtils.executeRequest("http://localhost:12345/validateBatch", validationJsonBody);
     }
-    @Then("^I receive (.*) succesresponses, (.*) errorresponses and (.*) badRequest responses$")
-    public void checkValidateBatchResponses(String s, String a, String b)throws IOException {
-        int success = checkNumberOfResponses("success", validateResponse);
-        int badRequest = checkNumberOfResponses("badRequest", validateResponse);
-        int errorMessage = checkNumberOfResponses("errorMessage", validateResponse);
-        System.out.println("success: " + success);
-        System.out.println("BR: " + badRequest);
-        System.out.println("EM: " + errorMessage);
+    @Then("^I receive (.*) succesresponses$")
+    public void checkValidateBatchResponses(String succesResponses)throws IOException {
+        System.out.println(validateResponse);
+        assertThat(Integer.parseInt(succesResponses)).isEqualTo(checkNumberOfResponses(validateResponse));
+    }
+    @Then("^I receive a badRequest Error$")
+    public void checkBadRequestResponse(){
+        System.out.println(validateResponse);
+        assertThat(validateResponse.getStatusLine().getStatusCode()).isIn(400, 401, 402, 403, 404, 500);
     }
 }

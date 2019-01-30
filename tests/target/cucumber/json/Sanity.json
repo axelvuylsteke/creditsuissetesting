@@ -1,0 +1,73 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 11,
+        "name": "What a feature \u003ctestCase\u003e",
+        "description": "",
+        "id": ";what-a-feature-\u003ctestcase\u003e;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 920395,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I am on login page",
+            "match": {
+              "location": "Validate.logInPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 404179,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I press login",
+            "match": {
+              "location": "Validate.pressLogin()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 440769,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I am logged in",
+            "match": {
+              "location": "Validate.loggedIn()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Sanity"
+          }
+        ]
+      }
+    ],
+    "name": "",
+    "description": "",
+    "id": "",
+    "keyword": "Feature",
+    "uri": "src/test/resources/features/Validate.feature",
+    "tags": [
+      {
+        "name": "@Sanity",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

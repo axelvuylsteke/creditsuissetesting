@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report.xsd" name="ch.creditsuisse.testing.tests.Sanity" time="0.477" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="gopherProxySet" value="false"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/axelixx/Documents/CreditSuisse/creditsuissetesting/tests/target/test-classes:/Users/axelixx/Documents/CreditSuisse/creditsuissetesting/tests/target/tests-1.0-SNAPSHOT.jar:/Users/axelixx/.m2/repository/org/testng/testng/6.14.3/testng-6.14.3.jar:/Users/axelixx/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:/Users/axelixx/.m2/repository/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar:/Users/axelixx/.m2/repository/org/assertj/assertj-core/3.10.0/assertj-core-3.10.0.jar:/Users/axelixx/.m2/repository/io/cucumber/cucumber-core/3.0.2/cucumber-core-3.0.2.jar:/Users/axelixx/.m2/repository/io/cucumber/cucumber-html/0.2.7/cucumber-html-0.2.7.jar:/Users/axelixx/.m2/repository/io/cucumber/gherkin/5.0.0/gherkin-5.0.0.jar:/Users/axelixx/.m2/repository/io/cucumber/tag-expressions/1.1.1/tag-expressions-1.1.1.jar:/Users/axelixx/.m2/repository/io/cucumber/cucumber-expressions/5.0.19/cucumber-expressions-5.0.19.jar:/Users/axelixx/.m2/repository/io/cucumber/datatable/1.0.3/datatable-1.0.3.jar:/Users/axelixx/.m2/repository/io/cucumber/datatable-dependencies/1.0.3/datatable-dependencies-1.0.3.jar:/Users/axelixx/.m2/repository/io/cucumber/cucumber-java/3.0.2/cucumber-java-3.0.2.jar:/Users/axelixx/.m2/repository/io/cucumber/cucumber-testng/3.0.2/cucumber-testng-3.0.2.jar:/Users/axelixx/.m2/repository/net/masterthought/cucumber-reporting/4.2.3/cucumber-reporting-4.2.3.jar:/Users/axelixx/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.7/jackson-databind-2.9.7.jar:/Users/axelixx/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar:/Users/axelixx/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.7/jackson-core-2.9.7.jar:/Users/axelixx/.m2/repository/org/apache/velocity/velocity/1.7/velocity-1.7.jar:/Users/axelixx/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/Users/axelixx/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar:/Users/axelixx/.m2/repository/velocity-tools/velocity-tools/1.4/velocity-tools-1.4.jar:/Users/axelixx/.m2/repository/joda-time/joda-time/2.10.1/joda-time-2.10.1.jar:/Users/axelixx/.m2/repository/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar:/Users/axelixx/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/Users/axelixx/.m2/repository/org/codehaus/plexus/plexus-utils/3.1.0/plexus-utils-3.1.0.jar:/Users/axelixx/.m2/repository/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.jar:/Users/axelixx/.m2/repository/com/googlecode/owasp-java-html-sanitizer/owasp-java-html-sanitizer/20181114.1/owasp-java-html-sanitizer-20181114.1.jar:/Users/axelixx/.m2/repository/com/google/guava/guava/19.0/guava-19.0.jar:/Users/axelixx/.m2/repository/commons-configuration/commons-configuration/1.10/commons-configuration-1.10.jar:/Users/axelixx/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/axelixx/.m2/repository/org/apache/maven/surefire/surefire-testng-utils/2.22.0/surefire-testng-utils-2.22.0.jar:/Users/axelixx/.m2/repository/org/apache/maven/surefire/surefire-grouper/2.22.0/surefire-grouper-2.22.0.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="user.country" value="BE"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/lib"/>
+    <property name="sun.java.command" value="/Users/axelixx/Documents/CreditSuisse/creditsuissetesting/tests/target/surefire/surefirebooter2769422521195718128.jar /Users/axelixx/Documents/CreditSuisse/creditsuissetesting/tests/target/surefire 2019-01-29T18-16-55_246-jvmRun1 surefire1618427594924372848tmp surefire_04128887829841375266tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="surefire.test.class.path" value="/Users/axelixx/Documents/CreditSuisse/creditsuissetesting/tests/target/test-classes:/Users/axelixx/Documents/CreditSuisse/creditsuissetesting/tests/target/tests-1.0-SNAPSHOT.jar:/Users/axelixx/.m2/repository/org/testng/testng/6.14.3/testng-6.14.3.jar:/Users/axelixx/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:/Users/axelixx/.m2/repository/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar:/Users/axelixx/.m2/repository/org/assertj/assertj-core/3.10.0/assertj-core-3.10.0.jar:/Users/axelixx/.m2/repository/io/cucumber/cucumber-core/3.0.2/cucumber-core-3.0.2.jar:/Users/axelixx/.m2/repository/io/cucumber/cucumber-html/0.2.7/cucumber-html-0.2.7.jar:/Users/axelixx/.m2/repository/io/cucumber/gherkin/5.0.0/gherkin-5.0.0.jar:/Users/axelixx/.m2/repository/io/cucumber/tag-expressions/1.1.1/tag-expressions-1.1.1.jar:/Users/axelixx/.m2/repository/io/cucumber/cucumber-expressions/5.0.19/cucumber-expressions-5.0.19.jar:/Users/axelixx/.m2/repository/io/cucumber/datatable/1.0.3/datatable-1.0.3.jar:/Users/axelixx/.m2/repository/io/cucumber/datatable-dependencies/1.0.3/datatable-dependencies-1.0.3.jar:/Users/axelixx/.m2/repository/io/cucumber/cucumber-java/3.0.2/cucumber-java-3.0.2.jar:/Users/axelixx/.m2/repository/io/cucumber/cucumber-testng/3.0.2/cucumber-testng-3.0.2.jar:/Users/axelixx/.m2/repository/net/masterthought/cucumber-reporting/4.2.3/cucumber-reporting-4.2.3.jar:/Users/axelixx/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.9.7/jackson-databind-2.9.7.jar:/Users/axelixx/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar:/Users/axelixx/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.9.7/jackson-core-2.9.7.jar:/Users/axelixx/.m2/repository/org/apache/velocity/velocity/1.7/velocity-1.7.jar:/Users/axelixx/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/Users/axelixx/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar:/Users/axelixx/.m2/repository/velocity-tools/velocity-tools/1.4/velocity-tools-1.4.jar:/Users/axelixx/.m2/repository/joda-time/joda-time/2.10.1/joda-time-2.10.1.jar:/Users/axelixx/.m2/repository/org/apache/commons/commons-lang3/3.7/commons-lang3-3.7.jar:/Users/axelixx/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/Users/axelixx/.m2/repository/org/codehaus/plexus/plexus-utils/3.1.0/plexus-utils-3.1.0.jar:/Users/axelixx/.m2/repository/org/jsoup/jsoup/1.11.3/jsoup-1.11.3.jar:/Users/axelixx/.m2/repository/com/googlecode/owasp-java-html-sanitizer/owasp-java-html-sanitizer/20181114.1/owasp-java-html-sanitizer-20181114.1.jar:/Users/axelixx/.m2/repository/com/google/guava/guava/19.0/guava-19.0.jar:/Users/axelixx/.m2/repository/commons-configuration/commons-configuration/1.10/commons-configuration-1.10.jar:/Users/axelixx/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/axelixx/.m2/repository/org/apache/maven/surefire/surefire-testng-utils/2.22.0/surefire-testng-utils-2.22.0.jar:/Users/axelixx/.m2/repository/org/apache/maven/surefire/surefire-grouper/2.22.0/surefire-grouper-2.22.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/axelixx"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre"/>
+    <property name="basedir" value="/Users/axelixx/Documents/CreditSuisse/creditsuissetesting/tests"/>
+    <property name="file.separator" value="/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/Users/axelixx/Documents/CreditSuisse/creditsuissetesting/tests/target/surefire/surefirebooter2769422521195718128.jar"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/classes"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="1.8.0_172-b11"/>
+    <property name="user.name" value="axelixx"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="10.14.2"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/axelixx/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/4f/mh8cdmnn4cd1skq1xwhx0p_w0000gn/T/"/>
+    <property name="java.version" value="1.8.0_172"/>
+    <property name="user.dir" value="/Users/axelixx/Documents/CreditSuisse/creditsuissetesting/tests"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/Users/axelixx/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="25.172-b11"/>
+    <property name="java.ext.dirs" value="/Users/axelixx/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+  </properties>
+  <testcase name="runScenario" classname="ch.creditsuisse.testing.tests.Sanity" time="0.02"/>
+</testsuite>

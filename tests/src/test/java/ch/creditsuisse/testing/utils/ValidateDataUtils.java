@@ -33,10 +33,12 @@ public class ValidateDataUtils {
 
         return getValidateDataJson(getValidateDataFile(jsonFile), objectMapper, fieldValuesOverridesMap);
     }
+
     public static String getValidateBatchData(String jsonFile, ObjectMapper objectMapper) throws IOException {
 
         return getValidateBatchDataJson(getValidateDataFile(jsonFile), objectMapper);
     }
+
     private static String getValidatBatcheDataJson(URL jsonUrl, ObjectMapper objectMapper) throws IOException {
         ArrayNode validateDataArrayNode = parseAsJsonArrayNode(jsonUrl, objectMapper);
         return objectMapper.writeValueAsString(validateDataArrayNode);
@@ -47,6 +49,7 @@ public class ValidateDataUtils {
         overrideFields(validateDataObjectNode, fieldValuesOverridesMap, objectMapper);
         return objectMapper.writeValueAsString(validateDataObjectNode);
     }
+
     private static String getValidateBatchDataJson(URL jsonUrl, ObjectMapper objectMapper) throws IOException {
         ArrayNode validateDataArrayNode = parseAsJsonArrayNode(jsonUrl, objectMapper);
         return objectMapper.writeValueAsString(validateDataArrayNode);
@@ -82,6 +85,7 @@ public class ValidateDataUtils {
         checkArgument(jsonNode instanceof ObjectNode, "Json data doesn't contain an object");
         return (ObjectNode) jsonNode;
     }
+
     static ArrayNode parseAsJsonArrayNode(URL jsonUrl, ObjectMapper objectMapper) throws IOException {
         JsonNode jsonNode = objectMapper.readTree(jsonUrl);
         checkArgument(jsonNode instanceof ArrayNode, "Json data doesn't contain an object");

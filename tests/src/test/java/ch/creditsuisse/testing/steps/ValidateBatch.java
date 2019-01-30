@@ -6,11 +6,13 @@ import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import gherkin.deps.com.google.gson.Gson;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
+import java.util.List;
 
 import static ch.creditsuisse.testing.utils.ValidateDataUtils.checkResponse;
 import static ch.creditsuisse.testing.utils.ValidateDataUtils.getValidateBatchData;
@@ -37,6 +39,22 @@ public class ValidateBatch {
     }
     @Then("^I receive multiple success responses$")
     public void checkValidateBatchResponses()throws IOException {
-        System.out.println(EntityUtils.toString(validateResponse.getEntity()));
+        String response = EntityUtils.toString(validateResponse.getEntity());
+        Gson gson = new Gson();
+        Response[] list = gson.fromJson(response, Response[].class);
+        System.out.println(list[0].getStatus());
+
+    }
+    class Response {
+        private String status;
+        private List<String> messages;
+
+        public String getStatus() {
+            return status;
+        }
+
+        public List<String> getMessages() {
+            return messages;
+        }
     }
 }

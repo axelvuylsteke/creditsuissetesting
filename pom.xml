@@ -25,6 +25,12 @@
         <cucumber.version>3.0.2</cucumber.version>
         <cucumber-reporting.version>4.2.3</cucumber-reporting.version>
         <commons-logging.version>1.2</commons-logging.version>
+        <!--UTILITY DEPENDENCIES-->
+        <beanutils.version>1.9.3</beanutils.version>
+        <!--HTTP DEPENDENCIES-->
+        <httpclient.version>4.5.7</httpclient.version>
+        <!--LOGGING DEPENDENCIES-->
+        <log4j.version>2.6.2</log4j.version>
     </properties>
 
     <dependencyManagement>
@@ -66,6 +72,23 @@
                 <groupId>commons-logging</groupId>
                 <artifactId>commons-logging</artifactId>
                 <version>${commons-logging.version}</version>
+            </dependency>
+            <!--HTTP DEPENDENCIES-->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+            <!--LOGGING DEPENDENCIES-->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

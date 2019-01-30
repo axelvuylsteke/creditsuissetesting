@@ -27,7 +27,7 @@ import static java.lang.System.currentTimeMillis;
 import static org.assertj.core.util.Preconditions.checkArgument;
 
 public class ValidateDataUtils {
-    private static Logger LOGGER = LogManager.getLogger(ValidateDataUtils.class);
+    private Response[] list;
 
     public static String getValidateData(String jsonFile, Map<String, String> fieldValuesOverridesMap, ObjectMapper objectMapper) throws IOException {
 
@@ -107,12 +107,49 @@ public class ValidateDataUtils {
         String responseBody = EntityUtils.toString(response.getEntity());
 
         Gson gson = new Gson();
-        Response responseGson = gson.fromJson(responseBody, Response.class);
-        return responseGson.status;
+        return gson.fromJson(responseBody, Response.class).status;
+
     }
+
+    private static Response[] checkMultipleResponses(HttpResponse response) throws IOException {
+        String resp = EntityUtils.toString(response.getEntity());
+        Gson gson = new Gson();
+        return(gson.fromJson(resp, Response[].class));
+    }
+
+    public static int checkNumberOfResponses(String responseType, HttpResponse response) throws IOException {
+        int i = 0;
+        for (Response resp : checkMultipleResponses(response)) {
+            switch (responseType) {
+                case "success":
+                    if (resp.getStatus() == "SUCCESS") {
+                        i++;
+                    }
+                    break;
+                case "badRequest":
+                    System.out.println("Test");
+                    break;
+                case "errorMessage":
+                    if (resp.getStatus() == "ERROR") {
+                        i++;
+                    }
+                    break;
+            }
+        }
+        return i;
+    }
+
 
     class Response {
         private String status;
         private List<String> messages;
+
+        public String getStatus() {
+            return status;
+        }
+
+        public List<String> getMessages() {
+            return messages;
+        }
     }
 }

@@ -1,4 +1,5 @@
 ch/creditsuisse/testing/utils/GenerateValidateDataDTODataTableConvertor.class
+ch/creditsuisse/testing/steps/ValidateBatch.class
 ch/creditsuisse/testing/steps/Validate.class
 ch/creditsuisse/testing/tests/Sanity.class
 ch/creditsuisse/testing/utils/GenerateValidateDataDTO.class

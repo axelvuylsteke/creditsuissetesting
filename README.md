@@ -1,6 +1,6 @@
 # creditsuissetesting
 
-#RESULTS:<br />
+## RESULTS:<br />
 Test report will be available with command line command: mvn clean verify -Psanity
 You will retrieve the report in the tests/target/cucumber-html-resports/overview-features.html
 From this html page you can click through to features/steps/tags views and see the test results.
@@ -8,7 +8,7 @@ From this html page you can click through to features/steps/tags views and see t
 Comments why 1 test is failing you can also see in the feature files itself.
 In total 10 of my tests at the moment are failing. When bugfixing is done or analysis rework is done, these can be solved.
 
-#FAILING TESTS:
+## FAILING TESTS:
 * /validate
     * 2 tests failing as we can add extra fields and still passing SUCCESS. If this is ok. Test should move to success tests, or test will go to green upon fixing
     * No Validation against exerciseStartDate. This can be before tradeDate or after expiryDate. Upon fixing, 2 test will go green

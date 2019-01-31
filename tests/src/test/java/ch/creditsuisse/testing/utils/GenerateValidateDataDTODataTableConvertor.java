@@ -14,16 +14,16 @@ public class GenerateValidateDataDTODataTableConvertor implements TableTransform
         List<List<String>> dataTableAsLists = dataTable.asLists();
         List<String> fields = dataTableAsLists.get(0);
         List<String> values = dataTableAsLists.get(1);
-        GenerateValidateDataDTO generateAccidentDataDTO = new GenerateValidateDataDTO();
+        GenerateValidateDataDTO generateValidateDataDTO = new GenerateValidateDataDTO();
         ListIterator<String> fieldsIterator = fields.listIterator();
         while (fieldsIterator.hasNext()) {
             int index = fieldsIterator.nextIndex();
             String fieldName = fieldsIterator.next();
             if (isNotBlank(fieldName)) {
                 String valueString = values.get(index);
-                generateAccidentDataDTO.fieldValueOverride(fieldName, valueString);
+                generateValidateDataDTO.fieldValueOverride(fieldName, valueString);
             }
         }
-        return generateAccidentDataDTO;
+        return generateValidateDataDTO;
     }
 }

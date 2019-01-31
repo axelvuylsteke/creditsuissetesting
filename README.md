@@ -1,6 +1,6 @@
 # creditsuissetesting
 
-##RESULTS:
+##RESULTS:<br />
 Test report will be available with command line command: mvn clean verify -Psanity
 You will retrieve the report in the tests/target/cucumber-html-resports/overview-features.html
 From this html page you can click through to features/steps/tags views and see the test results.

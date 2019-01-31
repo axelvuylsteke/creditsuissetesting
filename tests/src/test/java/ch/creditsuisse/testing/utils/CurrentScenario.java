@@ -6,7 +6,6 @@ public class CurrentScenario {
     public final static CurrentScenario INSTANCE = new CurrentScenario();
 
     private Scenario scenario;
-    private boolean warmUp;
 
     private CurrentScenario() {
     }

@@ -1,9 +1,11 @@
 ch/creditsuisse/testing/steps/ValidateBatch.class
 ch/creditsuisse/testing/steps/Validate.class
+ch/creditsuisse/testing/utils/CurrentScenario.class
 ch/creditsuisse/testing/tests/Sanity.class
 ch/creditsuisse/testing/utils/GenerateValidateDataDTO.class
 ch/creditsuisse/testing/TypeRegistryConfiguration.class
 ch/creditsuisse/testing/utils/ValidateDataUtils.class
 ch/creditsuisse/testing/tests/Tryout.class
+ch/creditsuisse/testing/utils/Hooks.class
 ch/creditsuisse/testing/utils/GenerateValidateDataDTODataTableConvertor.class
 ch/creditsuisse/testing/utils/ValidateDataUtils$Response.class

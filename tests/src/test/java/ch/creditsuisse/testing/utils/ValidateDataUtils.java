@@ -6,6 +6,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import gherkin.deps.com.google.gson.Gson;
+import gherkin.deps.com.google.gson.GsonBuilder;
+import gherkin.deps.com.google.gson.JsonElement;
+import gherkin.deps.com.google.gson.JsonParser;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
@@ -21,7 +24,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static java.lang.System.currentTimeMillis;
 import static org.assertj.core.util.Preconditions.checkArgument;
 
 public class ValidateDataUtils {
@@ -90,26 +92,30 @@ public class ValidateDataUtils {
     public static HttpResponse executeRequest(String basePath, String jsonBody) throws IOException, UnsupportedEncodingException {
         HttpResponse httpResponse = null;
         HttpPost httpPost = null;
-        HttpClient httpClient = HttpClientBuilder.create().build();
         httpPost = new HttpPost(basePath);
+        HttpClient httpClient = HttpClientBuilder.create().build();
         StringEntity params = new StringEntity(jsonBody);
         httpPost.addHeader("Content-Type", "application/json");
         httpPost.setEntity(params);
-        return httpClient.execute(httpPost);
+        httpResponse = httpClient.execute(httpPost);
+        writeCucumberLoggingRequest(httpPost, jsonBody);
+//        CurrentScenario.INSTANCE.getScenario().write("<<<REQUEST>>>\n" + httpPost.getURI() + "\n" + prettyJson(jsonBody));
+        return httpResponse;
     }
 
     public static String checkResponse(HttpResponse response) throws IOException {
         String responseBody = EntityUtils.toString(response.getEntity());
-
         Gson gson = new Gson();
+        writeCucumberLoggingResponse(response, responseBody);
         return gson.fromJson(responseBody, Response.class).status;
 
     }
 
     private static Response[] checkMultipleResponses(HttpResponse response) throws IOException {
-        String resp = EntityUtils.toString(response.getEntity());
+        String responseBody = EntityUtils.toString(response.getEntity());
         Gson gson = new Gson();
-        return gson.fromJson(resp, Response[].class);
+        writeCucumberLoggingResponse(response, responseBody);
+        return gson.fromJson(responseBody, Response[].class);
     }
 
     public static int checkNumberOfResponses(HttpResponse response) throws IOException {
@@ -133,5 +139,19 @@ public class ValidateDataUtils {
         public List<String> getMessages() {
             return messages;
         }
+    }
+
+    private static String prettyJson(String json){
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        JsonElement jsonElement = new JsonParser().parse(json);
+        return gson.toJson(jsonElement);
+    }
+    private static void writeCucumberLoggingResponse(HttpResponse response, String responseBody){
+        CurrentScenario.INSTANCE.getScenario().write("<<<RESPONSE>>>\n" + response.getStatusLine().getStatusCode());
+        CurrentScenario.INSTANCE.getScenario().write(prettyJson(responseBody));
+    }
+    private static void writeCucumberLoggingRequest(HttpPost post, String json){
+        CurrentScenario.INSTANCE.getScenario().write("<<<REQUEST>>>\n" + post.getURI() + "\n" + prettyJson(json));
+
     }
 }

@@ -17,7 +17,6 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.util.List;
 import java.util.Map;
@@ -38,7 +37,7 @@ public class ValidateDataUtils {
         return getValidateBatchDataJson(getValidateDataFile(jsonFile), objectMapper);
     }
 
-    private static String getValidatBatcheDataJson(URL jsonUrl, ObjectMapper objectMapper) throws IOException {
+    private static String getValidateBatcheDataJson(URL jsonUrl, ObjectMapper objectMapper) throws IOException {
         ArrayNode validateDataArrayNode = parseAsJsonArrayNode(jsonUrl, objectMapper);
         return objectMapper.writeValueAsString(validateDataArrayNode);
     }
@@ -77,21 +76,21 @@ public class ValidateDataUtils {
         return matcher.group("fileName");
     }
 
-    static ObjectNode parseAsJsonObjectNode(URL jsonUrl, ObjectMapper objectMapper) throws IOException {
+    private static ObjectNode parseAsJsonObjectNode(URL jsonUrl, ObjectMapper objectMapper) throws IOException {
         JsonNode jsonNode = objectMapper.readTree(jsonUrl);
         checkArgument(jsonNode instanceof ObjectNode, "Json data doesn't contain an object");
         return (ObjectNode) jsonNode;
     }
 
-    static ArrayNode parseAsJsonArrayNode(URL jsonUrl, ObjectMapper objectMapper) throws IOException {
+    private static ArrayNode parseAsJsonArrayNode(URL jsonUrl, ObjectMapper objectMapper) throws IOException {
         JsonNode jsonNode = objectMapper.readTree(jsonUrl);
         checkArgument(jsonNode instanceof ArrayNode, "Json data doesn't contain an object");
         return (ArrayNode) jsonNode;
     }
 
-    public static HttpResponse executeRequest(String basePath, String jsonBody) throws IOException, UnsupportedEncodingException {
-        HttpResponse httpResponse = null;
-        HttpPost httpPost = null;
+    public static HttpResponse executeRequest(String basePath, String jsonBody) throws IOException {
+        HttpResponse httpResponse;
+        HttpPost httpPost;
         httpPost = new HttpPost(basePath);
         HttpClient httpClient = HttpClientBuilder.create().build();
         StringEntity params = new StringEntity(jsonBody);
@@ -132,7 +131,7 @@ public class ValidateDataUtils {
         private String status;
         private List<String> messages;
 
-        public String getStatus() {
+        private String getStatus() {
             return status;
         }
 

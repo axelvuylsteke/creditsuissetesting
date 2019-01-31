@@ -1,6 +1,6 @@
 @Sanity
 Feature: POST validate REST API call testing
-
+@Tryout
   Scenario Outline: Valid REST call of /validate: <testCase>
     Given I set the Validation body from: <jsonBody> with following alterations:
       | <fieldName1> | <fieldValue1> |
@@ -10,23 +10,23 @@ Feature: POST validate REST API call testing
     Examples:
       | testCase                | jsonBody | fieldName1  | fieldValue1    |
       | provided json example 1 | <valid1> |             |                |
-      | provided json example 2 | <valid2> |             |                |
-      | provided json example 3 | <valid3> |             |                |
-      | customer = PLUTO2       | <valid1> | customer    | PLUTO2         |
-      | legalEntity = CS Zurich | <valid1> | legalEntity | CS Zurich      |
-      | legalEntity = CSZurich  | <valid1> | legalEntity | CSZurich       |
-      | type = Spot             | <valid1> | type        | Spot           |
-      | type = Forward          | <valid1> | type        | Forward        |
-      | trader = Axel Vuylsteke | <valid1> | trader      | Axel Vuylsteke |
-      | direction = SELL        | <valid1> | direction   | SELL           |
-      | ccyPair = CHFEUR        | <valid1> | ccyPair     | CHFEUR         |
-      | customer = PLUTO2       | <valid2> | customer    | PLUTO2         |
-      | legalEntity = CS Zurich | <valid2> | legalEntity | CS Zurich      |
-      | legalEntity = CSZurich  | <valid2> | legalEntity | CSZurich       |
-      | trader = Axel Vuylsteke | <valid2> | trader      | Axel Vuylsteke |
-      | direction = SELL        | <valid2> | direction   | SELL           |
-      | ccyPair = CHFEUR        | <valid2> | ccyPair     | CHFEUR         |
-      | style = EUROPEAN        | <valid2> | style       | EUROPEAN       |
+#      | provided json example 2 | <valid2> |             |                |
+#      | provided json example 3 | <valid3> |             |                |
+#      | customer = PLUTO2       | <valid1> | customer    | PLUTO2         |
+#      | legalEntity = CS Zurich | <valid1> | legalEntity | CS Zurich      |
+#      | legalEntity = CSZurich  | <valid1> | legalEntity | CSZurich       |
+#      | type = Spot             | <valid1> | type        | Spot           |
+#      | type = Forward          | <valid1> | type        | Forward        |
+#      | trader = Axel Vuylsteke | <valid1> | trader      | Axel Vuylsteke |
+#      | direction = SELL        | <valid1> | direction   | SELL           |
+#      | ccyPair = CHFEUR        | <valid1> | ccyPair     | CHFEUR         |
+#      | customer = PLUTO2       | <valid2> | customer    | PLUTO2         |
+#      | legalEntity = CS Zurich | <valid2> | legalEntity | CS Zurich      |
+#      | legalEntity = CSZurich  | <valid2> | legalEntity | CSZurich       |
+#      | trader = Axel Vuylsteke | <valid2> | trader      | Axel Vuylsteke |
+#      | direction = SELL        | <valid2> | direction   | SELL           |
+#      | ccyPair = CHFEUR        | <valid2> | ccyPair     | CHFEUR         |
+#      | style = EUROPEAN        | <valid2> | style       | EUROPEAN       |
 
 
   Scenario Outline: Invalid REST call of /validate: <testCase>
@@ -42,7 +42,7 @@ Feature: POST validate REST API call testing
       | ValueDate in a Weekend                  | <valid1>               | valueDate         | 2019-01-05  | <errorMessage> |
       | Invalid Customer                        | <valid1>               | customer          | PLUTO3      | <errorMessage> |
       | Customer small cases                    | <valid1>               | customer          | pluto1      | <errorMessage> |
-      | type = Forward                          | <valid1>               | type              | Hello       | <badRequest>   |
+      | type = Hello                            | <valid1>               | type              | Hello       | <badRequest>   |
       | Missing field in example 1              | <missingfield1>        |                   |             | <badRequest>   |
       | Missing field in example 2              | <missingfield2>        |                   |             | <badRequest>   |
       | TradeDate equals ValueDate              | <tradeequalsvaluedate> |                   |             | <errorMessage> |

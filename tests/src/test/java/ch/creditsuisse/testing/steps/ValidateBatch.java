@@ -37,12 +37,10 @@ public class ValidateBatch {
     }
     @Then("^I receive (.*) succesresponses$")
     public void checkValidateBatchResponses(String succesResponses)throws IOException {
-        System.out.println(validateResponse);
         assertThat(Integer.parseInt(succesResponses)).isEqualTo(checkNumberOfResponses(validateResponse));
     }
     @Then("^I receive a badRequest Error$")
     public void checkBadRequestResponse(){
-        System.out.println(validateResponse);
         assertThat(validateResponse.getStatusLine().getStatusCode()).isIn(400, 401, 402, 403, 404, 500);
     }
 }

@@ -12,8 +12,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -58,11 +56,9 @@ public class ValidateDataUtils {
         for (Map.Entry<String, String> fieldValueMapEntry : fieldValuesOverridesMap.entrySet()) {
             String fieldName = fieldValueMapEntry.getKey();
             String valueString = fieldValueMapEntry.getValue();
-            System.out.println(fieldName + " " + valueString);
             objectNode.put(fieldName, valueString);
 
         }
-        System.out.println(objectNode);
         return objectNode;
     }
 
@@ -112,7 +108,6 @@ public class ValidateDataUtils {
 
     private static Response[] checkMultipleResponses(HttpResponse response) throws IOException {
         String resp = EntityUtils.toString(response.getEntity());
-        System.out.println(resp);
         Gson gson = new Gson();
         return gson.fromJson(resp, Response[].class);
     }

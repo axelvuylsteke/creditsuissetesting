@@ -39,7 +39,6 @@ public class Validate {
 
     @Then("^I receive a successfull response$")
     public void checkSuccessResponse()throws  IOException{
-        System.out.println(validateResponse);
         assertThat("SUCCESS").isEqualTo(checkResponse(validateResponse));
     }
 

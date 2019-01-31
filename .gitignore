@@ -73,6 +73,7 @@ fabric.properties
 target
 target/**
 **/target
+**/target/**
 
 
 *.iml

@@ -2,6 +2,7 @@
 Feature: POST validate REST API call testing
 
   Scenario Outline: Valid REST call of /validate: <testCase>
+    Valid test cases for sending a REST API call to /validate endpoint.
     Given I set the Validation body from: <jsonBody> with following alterations:
       | <fieldName1> | <fieldValue1> |
     When I perform the /Validate REST call
@@ -30,7 +31,7 @@ Feature: POST validate REST API call testing
 
 
   Scenario Outline: Invalid REST call of /validate: <testCase>
-  Response message is Error or a response code of 400
+  Invalid test cases for sending a REST API call to /validate endpoint.
     Given I set the Validation body from: <jsonBody> with following alterations:
       | <fieldName1> | <fieldValue1> |
     When I perform the /Validate REST call

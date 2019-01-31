@@ -2,6 +2,7 @@
 Feature: POST validateBatch REST API call testing
 
   Scenario Outline: Valid REST call of /validateBatch: <testCase>
+  Valid test cases for sending a REST API call to /validateBatch endpoint.
     Given I set the ValidationBatch body with <jsonBody>
     When I perform the /validateBatch REST call
     Then I receive <succesResponse> succesresponses
@@ -12,6 +13,7 @@ Feature: POST validateBatch REST API call testing
       | 1 invalid jcustomer, 2 success | <validbatch2> | 2              |
 
   Scenario Outline: Invalid REST call of /validateBatch: <testCase>
+  Invalid test cases for sending a REST API call to /validateBatch endpoint.
     Given I set the ValidationBatch body with <jsonBody>
     When I perform the /validateBatch REST call
     Then I receive a badRequest Error

@@ -77,7 +77,6 @@ target/**
 
 
 *.iml
-pioneer-telematics-testing.iml
 
 **/.project
 **/bin/
